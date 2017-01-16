@@ -1,6 +1,9 @@
+#include <string.h>
+
 class String {
 	public :
 		String();
+		String(const char* s);
 		String(const string& str); //constructeur par copie
 
 
@@ -14,8 +17,8 @@ class String {
 
 
 	protected :
-		char chaine[];
-		int length; //Nombres de caracteres
+		char* chaine;
+		int length_; //Nombres de caracteres
 		int cap; //Nombres de cases totales du tableau
 
 
