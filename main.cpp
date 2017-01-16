@@ -1,6 +1,6 @@
 #include<iostream>
-
+#include"String.h"
 int main(){
 
-  std::cout<<String().lenght<<std::endl;
+  std::cout<<String().length<<std::endl;
 }
