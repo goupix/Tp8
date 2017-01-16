@@ -5,8 +5,8 @@ class String {
 
 
 		//Getters :
-		int Get_lenght();
-		int Get_cap();
+		int lenght();
+		int capacity();
 
 
 		
