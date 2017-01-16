@@ -1,3 +1,4 @@
+#include<String.h>
 class String {
 	public :
 		String();
@@ -14,8 +15,8 @@ class String {
 
 
 	protected :
-		char chaine[];
-		int length; //Nombres de caracteres
+		char* chaine;
+		int length_; //Nombres de caracteres
 		int cap; //Nombres de cases totales du tableau
 
 
