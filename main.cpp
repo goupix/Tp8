@@ -2,5 +2,6 @@
 #include"String.h"
 int main(){
 
-  std::cout<<String().length<<std::endl;
+  String lala;
+  std::cout<<lala.length()<<std::endl;
 }
