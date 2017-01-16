@@ -1,7 +1,13 @@
 class String {
 	public :
 		String();
-		String(
+		String(const string& str); //constructeur par copie
+
+
+		//Getters :
+		int Get_lenght();
+		int Get_cap();
+
 
 		
 
