@@ -1,7 +1,9 @@
-#include<String.h>
+#include <string.h>
+
 class String {
 	public :
 		String();
+		String(const char* s);
 		String(const string& str); //constructeur par copie
 
 
