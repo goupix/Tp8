@@ -17,7 +17,7 @@ class String {
 
 
 	protected :
-		char* chaine;
+		const char* chaine;
 		int length_; //Nombres de caracteres
 		int cap; //Nombres de cases totales du tableau
 
