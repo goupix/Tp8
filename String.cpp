@@ -11,9 +11,7 @@ String::String (){
   chaine[5]='\0';
 }
 
-
-int String::length() const {
-  std::cout<<length_<<std::endl;
+int String::length() const{
 
   return length_ ;     
 
@@ -22,7 +20,6 @@ int String::length() const {
 int String::capacity() const{
 
   return cap;
-
 }
 
 
@@ -38,7 +35,17 @@ int String::size() const{
 String::String( const char* s){
 
   cap=sizeof(s);
-
+	chaine = s;
+  
+	int i = 0;
+	int c = 1;
+	while (c == 1){
+		if (s[i] == '\0'){
+			c = 0;
+		}
+		i++;
+	}
+	length_ = i-1;
 
 }
 
