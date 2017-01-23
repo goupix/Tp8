@@ -8,23 +8,29 @@ String::String (){
   cap=10;
   chaine=new char[cap];
   length_=5;
- 
-  
-
+  chaine[5]='\0';
 }
 
-int String::length(){
+int String::length() const{
 
   return length_ ;     
 
 }
 
-int String::capacity(){
+int String::capacity() const{
 
   return cap;
 }
 
-String::String(const char* s){
+
+char* String:: c_str() const{
+  char* p=chaine;
+  return p;
+
+}
+
+
+String::String( const char* s){
 
   cap=sizeof(s);
 	chaine = s;
@@ -38,6 +44,13 @@ String::String(const char* s){
 		i++;
 	}
 	length_ = i-1;
+
+}
+
+String::String(const String& str){
+  length_=str.length();
+  cap=str.capacity();
+  chaine=str.c_str();
 
 }
 

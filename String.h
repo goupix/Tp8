@@ -8,16 +8,14 @@ class String {
 
 
 		//Getters :
-		int length();
-		int capacity();
-
-
-		
+		int length() const;
+		int capacity() const;
+        char* c_str() const;		
 
 
 
 	protected :
-		const char* chaine;
+		char* chaine;
 		int length_; //Nombres de caracteres
 		int cap; //Nombres de cases totales du tableau
 
