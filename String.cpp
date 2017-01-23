@@ -31,7 +31,9 @@ char* String:: c_str() const{
   return p;
 
 }
-
+int String::size() const{
+  return lenght_;
+}
 
 String::String( const char* s){
 

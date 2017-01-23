@@ -10,7 +10,8 @@ class String {
 		//Getters :
 		int length() const;
 		int capacity() const;
-        char* c_str() const;		
+        char* c_str() const;
+		int size() const;
 
 
 
