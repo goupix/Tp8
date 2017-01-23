@@ -4,7 +4,7 @@ class String {
 	public :
 		String();
 		String(const char* s);
-		String(const string& str); //constructeur par copie
+		String(const String& str); //constructeur par copie
 
 
 		//Getters :

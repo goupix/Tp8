@@ -27,7 +27,7 @@ int String::capacity(){
 
 String::String( const char* s){
 
-  cap=sizeof(s)
+  cap=sizeof(s);
 
 
 }
