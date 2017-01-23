@@ -8,11 +8,9 @@ class String {
 
 
 		//Getters :
-		int length();
-		int capacity();
-
-
-		
+		int length() const;
+		int capacity() const;
+        char* c_str() const;		
 
 
 
