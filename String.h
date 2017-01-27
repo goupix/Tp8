@@ -10,12 +10,12 @@ class String {
 		//Getters :
 		int length() const;
 		int capacity() const;
-
-
-
+        char* c_str() const;
+		int size() const;
+		int max_size() const;
+		//Methods
+		void clear();
 		void reserve(size_t n); //Methode reserve qui change la capacity
-
-		
 
 
 
@@ -23,7 +23,7 @@ class String {
 		char* chaine;
 		int length_; //Nombres de caracteres
 		int cap; //Nombres de cases totales du tableau
-
+        static const int max_size_=300; //Taille maximale du tableau
 
 
 };
