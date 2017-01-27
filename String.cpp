@@ -62,6 +62,8 @@ String::String(const char* s){
       chaine[i]=s[i];
 	}
 
+		
+  
 }
 
 // constructeur par copie
