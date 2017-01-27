@@ -10,8 +10,12 @@ class String {
 		//Getters :
 		int length() const;
 		int capacity() const;
-        char* c_str() const;
-		int size() const;
+
+
+
+		void reserve(size_t n); //Methode reserve qui change la capacity
+
+		
 
 
 

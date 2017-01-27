@@ -13,7 +13,7 @@ String::String (){
 
 int String::length() const{
 
-  return length_ ;     
+  return length_;     
 
 }
 
@@ -23,7 +23,7 @@ int String::capacity() const{
 }
 
 
-char* String:: c_str() const{
+char* String::c_str() const{
   char* p=chaine;
   return p;
 
@@ -33,8 +33,26 @@ int String::size() const{
   return length_;
 }
 
-String::String( const char* s){ //Constructeur depuis un c-string
+void String::reserve(size_t n){
+	if (n>length_){
+		if (n>100){
+			printf("La capacite donne est trop grande\n");
+		} else {
+				char* newchaine = new char[n+1];
+				for (int i=0 ; i<=length_ ; i++){
+					newchaine[i] = chaine[i];
+				chaine=newchaine;
+				cap = n;
+				}
+			}
+	}
+}
 
+
+
+
+
+String::String( const char* s){ //Constructeur depuis un c-string
 	int i = 0;
 	int c = 1;
 	while (c == 1){
