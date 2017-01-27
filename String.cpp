@@ -28,15 +28,13 @@ char* String:: c_str() const{
   return p;
 
 }
+
 int String::size() const{
-  return lenght_;
+  return length_;
 }
 
-String::String( const char* s){
+String::String( const char* s){ //Constructeur depuis un c-string
 
-  cap=sizeof(s);
-	chaine = s;
-  
 	int i = 0;
 	int c = 1;
 	while (c == 1){
@@ -47,6 +45,13 @@ String::String( const char* s){
 	}
 	length_ = i-1;
 
+  cap=sizeof(s);
+	chaine = new char[cap+1];
+		for (i=0 ; i<length_ ; i++) {
+			chaine[i] = s[i];
+
+		}
+  
 }
 
 String::String(const String& str){
