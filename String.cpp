@@ -124,7 +124,10 @@ String::String( const char* s){ //Constructeur depuis un c-string
 		}
 		length_ = i-1;
 
-		cap=sizeof(s)-2;
+		cap=length_+10;
+		if (cap > max_size_){
+			cap=length_;
+		}
 		chaine= new char[cap+1];
 		for (int i=0 ; i<length_ ; i++) {
 			chaine[i]=s[i];
