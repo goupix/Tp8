@@ -67,6 +67,16 @@ int main(){
   printf("Taille après ajout de caractere: %d\n", str4.length());
   printf("Chaine après ajout: %s\n", str4.c_str());
   
+  //test de l'operateur + str
+  printf("########## Test de l'operateur + 3##########\n");
+  String str5= test+chaine;
+ 
+  printf("Taille avant ajout de caractere: %d\n", test.length());
+  printf("Chaine avant ajout: %s\n", test.c_str());
+
+  printf("Taille après ajout de caractere: %d\n", str5.length());
+  printf("Chaine après ajout: %s\n", str5.c_str());
+  
   //test de la fonction empty
   
   printf("########## Test de la methode empty ##########\n");
