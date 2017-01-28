@@ -60,7 +60,7 @@ void String::reserve(size_t n){
 
 void String::resize(size_t n, char c){
   if (n > max_size_){
-    printf("Erreur, la nouvelle taille donnee est trop grande");
+    printf("Erreur, la nouvelle taille donnée est trop grande");
   }
   if (n > length_){
     if (n < cap) {
@@ -143,6 +143,10 @@ void String::clear(){
 }
 
 String operator+ (const String& lhs, char rhs){
+  if(lhs.cap+1>lhs.max_size_){
+  printf("Erreur, la nouvelle taille donnée est trop grande!!\n");
+  }
+  else{
   String add;
   add.length_=lhs.length_+1;
   add.cap=lhs.cap+1;
@@ -156,9 +160,28 @@ String operator+ (const String& lhs, char rhs){
   
 
   return add;
+  }
 }
 
+String& String:: operator= (const String& str){
+  length_=str.length_;
+  cap=str.cap;
+  for(int i=0; i<cap; i++){
+    chaine[i]=str.chaine[i];
+  }
+  chaine[length_]='\0';
+  return *this;
 
+}
 
+String& String:: operator= (char c){
+  length_=length_+1;
+  cap=cap+1;
+  chaine[0]=c;
+  chaine[1]='\0';
+
+  return *this;
+
+}
 
 

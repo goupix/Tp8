@@ -31,7 +31,7 @@ int main(){
   printf("########## Test du constructeur par copie ########\n");
   printf("Taille de la chaine initiale: %d\n",test.length());
   printf("Capacité de la chaine initiale: %d\n",test.capacity());
-  printf("Contenu de la chaine initiale: %s\n",test.c_str());
+  printf("Contenu de la chaine initiale: %s\n\n",test.c_str());
   String str2(test);
   printf("Taille max requise pour une chaine: %d\n", str2.max_size());
   printf("Taille de la chaine copiée: %d\n", str2.length());
@@ -69,9 +69,40 @@ int main(){
 		printf("Reussi\n");
 	}
 
- 
+  //Test de l' operateur = avec une string
+  printf("######### Test de l'opérateur = ##########\n");
+  
+  char chaine2[3]; //Tableau de caracteres pour le test
+  chaine2[0] = 'E';
+  chaine2[1] = 'F';
+  chaine2[2] = '\0';
 
-  //test de la fonction clear
+  String str4(chaine2); 
+  
+  printf("Longueur de la chaine au départ: %d\n", str4.length());
+  printf("Capacité de la chaine au départ: %d\n", str4.capacity());
+  printf("Contenu de la chaine au départ: %s\n", str4.c_str());
+
+
+  printf("Longueur de la chaine à copier: %d\n", test.length());
+  printf("Capacité de la chaine à copier: %d\n", test.capacity());
+  printf("Contenu de la chaine à copier: %s\n", test.c_str());
+
+
+  str4=test; 
+  printf("Longueur de la chaine après copie: %d\n", str4.length());
+  printf("Capacité de la chaine après copie: %d\n", str4.capacity());
+  printf("Contenu de la chaine après copie: %s\n", str4.c_str());
+
+ 
+  // Test de l'operateur = avec caractere
+  printf("########## Test de l'operateur = avec caractere ##########\n");;
+  printf("Chaine avant = : %s\n", str4.c_str());
+  str4='T';
+  printf("Chaine après= : %s\n", str4.c_str());
+
+  
+  // Test de la fonction clear
   printf("########## Test de la methode clear ##########\n");
   printf("Taille de la chaine avant clear: %d\n", test.length());
   printf("Capacité de la chaine avant clear: %d\n", test.capacity());
