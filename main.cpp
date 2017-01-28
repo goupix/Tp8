@@ -5,6 +5,14 @@
 using namespace std;
 
 int main(){
+ 
+
+  //Test du constructeur par défaut
+  String str;
+  printf("########## Test du constructeur par défaut ##########\n");
+  printf("Taille de la chaine: %d\n",str.length());
+  printf("Capacité de la chaine: %d\n", str.capacity());
+  printf("Chaine: %s\n", str.c_str());
 	
   char chaine[7]; //Tableau de caracteres pour le test
   chaine[0] = 'A';
@@ -13,10 +21,10 @@ int main(){
   chaine[3] = '\0';
 
   String test(chaine); //Test du constructeur depuis un c-string
-  printf("test c_str : %c\n", test.c_str()[2]);
   printf("########## Test du constructeur depuis un c-string ##########\n");
-  printf("length : %d\n", test.length());
-  printf("capacity : %d\n", test.capacity());
+  printf("Taille de la chaine: %d\n", test.length());
+  printf("Capacité de la chaine: %d\n", test.capacity());
+  printf("Contenu de la chaine: %s\n", test.c_str());
   
   
   //test du constructeur par copie
@@ -30,26 +38,41 @@ int main(){
   printf("Capacité de la chaine copiée: %d\n",str2.capacity());
   printf("Contenu de la chaine copiée: %s\n", str2.c_str());
 	
-  test.reserve(30); //Test de la methode reserve
-  printf("Test de la methode reserve : %d\n", test.capacity());
 	
   printf("chaine : %s\n",test.c_str());
   test.resize(20,'T'); //Test de la methode resize
   printf("chaine2 : %s\n",test.c_str());
 
- //test du la fonction clear
-  printf("########## Test de la methode clear ##########\n");
-  printf("Taille de la chaine avant clear: %d\n", test.length());
-
-  test.clear();
-  printf("Taille de la chaine après clear: %d\n", test.length());
 
   //test de l'operateur +
   printf("########## Test de l'operateur + ##########\n");
   String str3= test+'D';
  
   printf("Taille avant ajout de caractere: %d\n", test.length());
-  printf("Taille après ajout de caractere: %d\n", str3.length());
+  printf("Chaine avant ajout: %s\n", test.c_str());
 
-  printf("Chaine avant ajout: %s \n", test.c_str() );
+  printf("Taille après ajout de caractere: %d\n", str3.length());
+  printf("Chaine après ajout: %s\n", str3.c_str());
+
+ 
+
+  //test de la fonction clear
+  printf("########## Test de la methode clear ##########\n");
+  printf("Taille de la chaine avant clear: %d\n", test.length());
+  printf("Capacité de la chaine avant clear: %d\n", test.capacity());
+  printf("Chaine avant clear: %s\n", test.c_str());
+
+
+  test.clear();
+  printf("Taille de la chaine après clear: %d\n", test.length());
+  printf("Capacité de la chaine avant clear: %d\n", test.capacity());
+  printf("Chaine après clear: %s\n", test.c_str());
+
+  //Test de la methode reserve
+
+  test.reserve(30); 
+  printf("##########Test de la méthode reserve##########\n");
+  printf("Valeur de la capacité après reserve:: %d\n", test.capacity());
+
+
 }
