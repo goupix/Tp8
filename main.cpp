@@ -24,7 +24,7 @@ int main(){
   std::cout<<test.length()<<std::endl;
   std::cout<<test.capacity()<<std::endl;
   test.reserve(30); //Test de la methode reserve
-  std::cout<<test.c_str()<<std::endl;
+  std::cout<<test.c_str()[2]<<std::endl;
 
 	
 
@@ -42,5 +42,5 @@ int main(){
   printf("Taille avant ajout de caractere: %d\n", test.length());
   printf("Taille après ajout de caractere: %d\n", str3.length());
 
-  printf("Chaine avant ajout: %s\n", test.c_str());
+  printf("Chaine avant ajout: %c, %c, %c, %c \n", test.c_str()[0], test.c_str()[1], test.c_str()[2], test.c_str()[3] );
 }
