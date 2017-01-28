@@ -38,11 +38,14 @@ int main(){
   printf("Capacité de la chaine copiée: %d\n",str2.capacity());
   printf("Contenu de la chaine copiée: %s\n", str2.c_str());
 	
-	
-  printf("chaine : %s\n",test.c_str());
-  test.resize(20,'T'); //Test de la methode resize
-  printf("chaine2 : %s\n",test.c_str());
-
+  //Test de la methode resize
+  printf("########## Test de la methode resize ##########\n");
+   
+  printf("Chaine avent resize: %s\n",test.c_str());
+  test.resize(20,'T'); 
+  printf("Chaine après resize (plus grand): %s\n",test.c_str());
+  test.resize(3,'T');
+  printf("Chaine après resize (plus petit): %s\n", test.c_str());
 
   //test de l'operateur +
   printf("########## Test de l'operateur + ##########\n");
