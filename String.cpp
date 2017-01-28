@@ -59,34 +59,37 @@ void String::reserve(size_t n){
 }
 
 void String::resize(size_t n, char c){
-	if (n > max_size_){
-		printf("Erreur, la nouvelle taille donnee est trop grande");
-	}
+  if (n > max_size_){
+    printf("Erreur, la nouvelle taille donnee est trop grande");
+  }
   if (n > length_){
-		if (n < cap) {
-			for (int i=length_; i<n; i++)
-				chaine[i]=c;
-			chaine[n]='\0';
-			length_=n;
-		} 
-		else {
-			char* newtab=new char[n+1];
-			for (int i=0; i<length_; i++)
-				newtab[i]=chaine[i];
-			for (int i=length_; i<n; i++)
-				newtab[i]=c;
-			newtab[n]='\0';
-			chaine=newtab;
-			length_=n;
-		}
+    if (n < cap) {
+	  for (int i=length_; i<n; i++){
+	    chaine[i]=c;
+		chaine[n]='\0';
+		length_=n;
+	  } 
 	}
 	else {
+	  char* newtab=new char[n+1];
+	  for (int i=0; i<length_;i++){
+	    newtab[i]=chaine[i];
+	  }
+	  for (int i=length_; i<n; i++){
+		  newtab[i]=c;
+		  newtab[n]='\0';
+		  chaine=newtab;
+		  length_=n;
+	  }
+	}
+  }
+
+  else {
 		chaine[n]='\0';
 		length_=n;
   }
 }
-
-
+  
 
 
 
