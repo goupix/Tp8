@@ -89,7 +89,16 @@ void String::resize(size_t n, char c){
 		length_=n;
   }
 }
-  
+
+bool String::empty(){
+	if (length_ == 0){
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
 
 
 

@@ -19,7 +19,7 @@ class String {
         friend String operator+ (const String& lhs, char rhs);//Operateur + qui rajoute un caratere à une chaine 
 		void resize(size_t n, char c); //Methode qui change la taille du tableau
 		String& operator= (const String& str);
-
+        bool empty();
 
 
 	protected :
