@@ -33,9 +33,9 @@ int main(){
   test.reserve(30); //Test de la methode reserve
   printf("Test de la methode reserve : %d\n", test.capacity());
 	
-	
-  //test.resize(20,'t');
-  //printf("chaine : %c\n",test.c_str()[2]);
+  printf("chaine : %s\n",test.c_str());
+  test.resize(20,'T'); //Test de la methode resize
+  printf("chaine2 : %s\n",test.c_str());
 
  //test du la fonction clear
   printf("########## Test de la methode clear ##########\n");
