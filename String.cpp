@@ -5,10 +5,10 @@
 //constructeur par défaut
 String::String (){
   
-  cap=10;
-  chaine=new char[cap];
-  length_=5;
-  chaine[5]='\0';
+  cap=0;
+  chaine=new char[cap+1];
+  length_=0;
+  chaine[0]='\0';
 }
 
 // fonction length, renvoit la taille de la chaine de caractères
@@ -62,8 +62,6 @@ String::String(const char* s){
       chaine[i]=s[i];
 	}
 
-		
-  
 }
 
 // constructeur par copie
@@ -80,6 +78,23 @@ void String::clear(){
   length_=0;
 
 }
+
+String operator+ (const String& lhs,const char rhs){
+  String add;
+  add.length_=lhs.lenght()+1;
+  add.cap=lhs.capacity()+1;
+  add.chaine=new char[add.cap];
+  for( int i=0; i<lhs.length_; i++){
+    add.chaine[i]=lhs.chaine[i];
+  }
+  add.chaine[lhs.length_]=rhs;
+  add.chaine[lhs.length_+1]='\0';
+  
+  
+
+  return add;
+}
+
 
 
 
