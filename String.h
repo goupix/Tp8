@@ -15,11 +15,12 @@ class String {
 		int max_size() const;
 		//Methods
 		void clear();
+		String operator+ (const String& lhs, char rhs);
 
 
 
 	protected :
-		char* chaine;
+		char* chaine;//tableau de caracteres
 		int length_; //Nombres de caracteres
 		int cap; //Nombres de cases totales du tableau
         static const int max_size_=300; //Taille maximale du tableau
