@@ -17,6 +17,7 @@ class String {
 		void clear();
 		void reserve(size_t n); //Methode reserve qui change la capacity
         friend String operator+ (const String& lhs, char rhs);
+        friend String operator+ (const String& lhs, const String& rhs);
 		void resize(size_t n, char c); //Methode qui change la taille du tableau
 		bool empty();
 

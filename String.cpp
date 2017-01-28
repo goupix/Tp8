@@ -104,23 +104,28 @@ bool String::empty(){
 
 
 String::String( const char* s){ //Constructeur depuis un c-string
-  int i = 0;
-  int c = 1;
-	while (c == 1){
-	  if (s[i] == '\0'){
-	    c = 0;
-	  }
-	  i++;
+	if (sizeof(s) > max_size_){
+		printf("Erreur, le tableau est trop grand");
 	}
-	length_ = i-1;
+	else {
+		int i = 0;
+		int c = 1;
+		while (c == 1){
+			if (s[i] == '\0'){
+				c = 0;
+			}
+			i++;
+		}
+		length_ = i-1;
 
-  cap=sizeof(s)-2;
-  chaine= new char[cap+1];
-  for (int i=0 ; i<length_ ; i++) {
-    chaine[i]=s[i];
-	  
-  }
-  chaine[length_]='\0';
+		cap=sizeof(s)-2;
+		chaine= new char[cap+1];
+		for (int i=0 ; i<length_ ; i++) {
+			chaine[i]=s[i];
+			
+		}
+		chaine[length_]='\0';
+	}
 
 }
 
@@ -154,7 +159,26 @@ String operator+ (const String& lhs, char rhs){
   add.chaine[lhs.length_+1]='\0';
   
   
+  return add;
+}
 
+String operator+ (const String& lhs, const String& rhs){
+  String add;
+  add.length_=lhs.length_+rhs.length_;
+  add.cap=lhs.cap+rhs.cap;
+  if (add.cap > lhs.max_size_){
+		printf("Erreur, la taille de la nouvelle chaine est trop grand");
+	}
+  else {
+		add.chaine=new char[add.cap];
+		for(int i=0; i<lhs.length_; i++){
+			add.chaine[i]=lhs.chaine[i];
+		}
+		for(int i=lhs.length_; i<=add.length_; i++){
+			add.chaine[i]=rhs.chaine[i-lhs.length_];
+		}
+  }
+  
   return add;
 }
 
