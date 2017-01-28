@@ -25,9 +25,8 @@ int String::capacity() const{
 }
 
 
-char* String::c_str() const{
-  char*p =chaine;
-  return p;
+const char* String::c_str() const{
+  return chaine;
 
 }
 
@@ -85,9 +84,12 @@ String::String( const char* s){ //Constructeur depuis un c-string
 // constructeur par copie
 
 String::String(const String& str){
-  length_=str.length();
-  cap=str.capacity();
-  chaine=str.c_str();
+  length_=str.length_;
+  cap=str.cap;
+  chaine= new char[cap+1];
+  for(int i=0; i<length_; i++){
+    chaine[i]=str.chaine[i];
+  }
 
 }
 
