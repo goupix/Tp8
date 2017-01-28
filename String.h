@@ -10,7 +10,7 @@ class String {
 		//Getters :
 		int length() const;
 		int capacity() const;
-        const char* c_str() const;
+        char* c_str() const;
 		int size() const;
 		int max_size() const;
 		//Methods
@@ -18,6 +18,7 @@ class String {
 		void reserve(size_t n); //Methode reserve qui change la capacity
         friend String operator+ (const String& lhs, char rhs);
 		void resize(size_t n, char c); //Methode qui change la taille du tableau
+		bool empty();
 
 
 	protected :

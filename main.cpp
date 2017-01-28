@@ -53,6 +53,18 @@ int main(){
 
   printf("Taille après ajout de caractere: %d\n", str3.length());
   printf("Chaine après ajout: %s\n", str3.c_str());
+  
+  //test de la fonction empty
+  
+  printf("########## Test de la methode empty ##########\n");
+  printf("Test sur une chaine vide :\n");
+  if (str.empty() == true){
+		printf("Reussi\n");
+	}
+	printf("Test sur une chaine rempli :\n");
+	if (test.empty() == false){
+		printf("Reussi\n");
+	}
 
  
 
@@ -73,6 +85,7 @@ int main(){
   test.reserve(30); 
   printf("##########Test de la méthode reserve##########\n");
   printf("Valeur de la capacité après reserve:: %d\n", test.capacity());
+  
 
 
 }
