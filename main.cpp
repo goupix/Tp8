@@ -1,37 +1,55 @@
 #include<iostream>
 #include"String.h"
-#include <stdio.h>
+#include<stdio.h>
 
 using namespace std;
 
 int main(){
 	
-	char chaine[7]; //Tableau de caracteres de test
-	chaine[0] = 'A';
-	chaine[1] = 'B';
-	chaine[2] = 'C';
-	chaine[3] = '\0';
+  char chaine[7]; //Tableau de caracteres pour le test
+  chaine[0] = 'A';
+  chaine[1] = 'B';
+  chaine[2] = 'C';
+  chaine[3] = '\0';
 
- 	String test(chaine); //Test du constructeur depuis un c-string
- 	printf("test c_str : %c\n", test.c_str()[2]);
- 	printf("########## Test du constructeur depuis un c-string ##########\n");
- 	printf("length : %d\n", test.length());
- 	printf("length : %d\n", test.capacity());
- 	
- 	
- 	
-	test.reserve(30); //Test de la methode reserve
-	printf("Test de la methode reserve : %d\n", test.capacity());
+  String test(chaine); //Test du constructeur depuis un c-string
+  printf("test c_str : %c\n", test.c_str()[2]);
+  printf("########## Test du constructeur depuis un c-string ##########\n");
+  printf("length : %d\n", test.length());
+  printf("capacity : %d\n", test.capacity());
+  
+  
+  //test du constructeur par copie
+  printf("########## Test du constructeur par copie ########\n");
+  printf("Taille de la chaine initiale: %d\n",test.length());
+  printf("Capacité de la chaine initiale: %d\n",test.capacity());
+  printf("Contenu de la chaine initiale: %s\n",test.c_str());
+  String str2(test);
+  printf("Taille max requise pour une chaine: %d\n", str2.max_size());
+  printf("Taille de la chaine copiée: %d\n", str2.length());
+  printf("Capacité de la chaine copiée: %d\n",str2.capacity());
+  printf("Contenu de la chaine copiée: %s\n", str2.c_str());
+	
+  test.reserve(30); //Test de la methode reserve
+  printf("Test de la methode reserve : %d\n", test.capacity());
 	
 	
-	//test.resize(20,'t');
-	//printf("chaine : %c\n",test.c_str()[2]);
+  //test.resize(20,'t');
+  //printf("chaine : %c\n",test.c_str()[2]);
 
-	String str;
-  	cout<<str.length()<<endl;
-  	String str2(str);
-  	cout<<str2.max_size()<<endl;
-  	cout<<str2.length()<<endl;
-  	str2.clear();
-  	cout<<str2.length()<<endl;
+ //test du la fonction clear
+  printf("########## Test de la methode clear ##########\n");
+  printf("Taille de la chaine avant clear: %d\n", test.length());
+
+  test.clear();
+  printf("Taille de la chaine après clear: %d\n", test.length());
+
+  //test de l'operateur +
+  printf("########## Test de l'operateur + ##########\n");
+  String str3= test+'D';
+ 
+  printf("Taille avant ajout de caractere: %d\n", test.length());
+  printf("Taille après ajout de caractere: %d\n", str3.length());
+
+  printf("Chaine avant ajout: %s \n", test.c_str() );
 }
