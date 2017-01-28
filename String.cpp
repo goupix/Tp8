@@ -1,5 +1,6 @@
 #include"String.h"
 #include<iostream>
+#include <stdio.h>
 
 
 //constructeur par défaut
@@ -43,7 +44,7 @@ int String::max_size() const{
 
 void String::reserve(size_t n){
 	if (n>length_){
-		if (n>100){
+		if (n>max_size_){
 			printf("La capacite donne est trop grande\n");
 		} else {
 				char* newchaine = new char[n+1];
@@ -57,25 +58,53 @@ void String::reserve(size_t n){
 }
 
 
+void String::resize(size_t n, char c){
+    if (n > max_size_){
+		printf("Erreur, la nouvelle taille donnee est trop grande");
+    }
+    if (n > length_){
+		if (n < cap) {
+			for (int i=length_; i<n; i++)
+				chaine[i]=c;
+			chaine[n]='\0';
+			length_=n;
+		} else {
+			char* newtab=new char[n+1];
+			for (int i=0; i<length_; i++)
+				newtab[i]=chaine[i];
+			for (int i=length_; i<n; i++)
+				newtab[i]=c;
+			newtab[n]='\0';
+			length_=n;
+			chaine=newtab;
+		}
+    } else {
+		chaine[n]='\0';
+		length_=n;
+    }
+}
+
+
 
 
 
 String::String( const char* s){ //Constructeur depuis un c-string
-	int i = 0;
-	int c = 1;
+  int i = 0;
+  int c = 1;
 	while (c == 1){
-		if (s[i] == '\0'){
-			c = 0;
-		}
-		i++;
+	  if (s[i] == '\0'){
+	    c = 0;
+	  }
+	  i++;
 	}
 	length_ = i-1;
 
-  cap=sizeof(s);
-  chaine= new char[cap+1];
-    for (i=0 ; i>length_ ; i++) {
+	cap=sizeof(s)-2;
+	chaine= new char[cap+1];
+    for (int i=0 ; i<length_ ; i++) {
       chaine[i]=s[i];
-	}
+    chaine[length_]='\0';
+    }
 
 		
   

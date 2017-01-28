@@ -1,5 +1,6 @@
 #include<iostream>
 #include"String.h"
+#include <stdio.h>
 
 using namespace std;
 
@@ -12,10 +13,19 @@ int main(){
 	chaine[3] = '\0';
 
  	String test(chaine); //Test du constructeur depuis un c-string
-	std::cout<<test.length()<<std::endl;
-	std::cout<<test.capacity()<<std::endl;
+ 	printf("test c_str : %c\n", test.c_str()[2]);
+ 	printf("########## Test du constructeur depuis un c-string ##########\n");
+ 	printf("length : %d\n", test.length());
+ 	printf("length : %d\n", test.capacity());
+ 	
+ 	
+ 	
 	test.reserve(30); //Test de la methode reserve
-	std::cout<<test.capacity()<<std::endl;
+	printf("Test de la methode reserve : %d\n", test.capacity());
+	
+	
+	//test.resize(20,'t');
+	//printf("chaine : %c\n",test.c_str()[2]);
 
 	String str;
   	cout<<str.length()<<endl;

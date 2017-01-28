@@ -13,9 +13,11 @@ class String {
         char* c_str() const;
 		int size() const;
 		int max_size() const;
+		
 		//Methods
 		void clear();
 		void reserve(size_t n); //Methode reserve qui change la capacity
+		void resize(size_t n, char c); //Methode qui change la taille du tableau
 
 
 
