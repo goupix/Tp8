@@ -97,11 +97,11 @@ int main(){
   chaine2[1] = 'F';
   chaine2[2] = '\0';
 
-  String str4(chaine2); 
+  String str6(chaine2); 
   
-  printf("Longueur de la chaine au départ: %d\n", str4.length());
-  printf("Capacité de la chaine au départ: %d\n", str4.capacity());
-  printf("Contenu de la chaine au départ: %s\n", str4.c_str());
+  printf("Longueur de la chaine au départ: %d\n", str6.length());
+  printf("Capacité de la chaine au départ: %d\n", str6.capacity());
+  printf("Contenu de la chaine au départ: %s\n", str6.c_str());
 
 
   printf("Longueur de la chaine à copier: %d\n", test.length());
@@ -109,17 +109,17 @@ int main(){
   printf("Contenu de la chaine à copier: %s\n", test.c_str());
 
 
-  str4=test; 
-  printf("Longueur de la chaine après copie: %d\n", str4.length());
-  printf("Capacité de la chaine après copie: %d\n", str4.capacity());
-  printf("Contenu de la chaine après copie: %s\n", str4.c_str());
+  str6=test; 
+  printf("Longueur de la chaine après copie: %d\n", str6.length());
+  printf("Capacité de la chaine après copie: %d\n", str6.capacity());
+  printf("Contenu de la chaine après copie: %s\n", str6.c_str());
 
  
   // Test de l'operateur = avec caractere
   printf("########## Test de l'operateur = avec caractere ##########\n");;
-  printf("Chaine avant = : %s\n", str4.c_str());
-  str4='T';
-  printf("Chaine après= : %s\n", str4.c_str());
+  printf("Chaine avant = : %s\n", str6.c_str());
+  str6='T';
+  printf("Chaine après= : %s\n", str6.c_str());
 
   
   // Test de la fonction clear

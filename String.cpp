@@ -172,6 +172,7 @@ String operator+ (const String& lhs, char rhs){
   
   
   return add;
+  }
 }
 
 String operator+ (const String& lhs, const String& rhs){
