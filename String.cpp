@@ -14,7 +14,7 @@ String::String (){
 // fonction length, renvoit la taille de la chaine de caractères
 int String::length() const{
 
-  return length_ ;     
+  return length_;     
 
 }
 
@@ -24,9 +24,8 @@ int String::capacity() const{
   return cap;
 }
 
-// fonction c_str, retourne le pointeur que pointe vers l'attribut
-// chaine
-char* String:: c_str() const{
+
+char* String::c_str() const{
   char* p=chaine;
   return p;
 
@@ -42,19 +41,35 @@ int String::max_size() const{
   return max_size_;
 }
 
-// constructeur avec pour argument un tableau de caracteres
-
-String::String(const char* s){
-
-  int i=0;
-  int c=1;
-  while (c==1){
-    if (s[i] == '\0'){
-	  c=0;
+void String::reserve(size_t n){
+	if (n>length_){
+		if (n>100){
+			printf("La capacite donne est trop grande\n");
+		} else {
+				char* newchaine = new char[n+1];
+				for (int i=0 ; i<=length_ ; i++){
+					newchaine[i] = chaine[i];
+				chaine=newchaine;
+				cap = n;
+				}
+			}
 	}
-	i++;
-  }
-  length_=i-1;
+}
+
+
+
+
+
+String::String( const char* s){ //Constructeur depuis un c-string
+	int i = 0;
+	int c = 1;
+	while (c == 1){
+		if (s[i] == '\0'){
+			c = 0;
+		}
+		i++;
+	}
+	length_ = i-1;
 
   cap=sizeof(s);
   chaine= new char[cap+1];

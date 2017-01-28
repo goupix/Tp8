@@ -4,25 +4,34 @@
 using namespace std;
 
 int main(){
+
   //test du constructeur par copie
   String str;
   cout<<str.length()<<endl;
   String str2(str);
   cout<<str2.max_size()<<endl;
   cout<<str2.length()<<endl;
+	
+  char chaine[7]; //Tableau de caracteres de test
+  chaine[0] = 'A';
+  chaine[1] = 'B';
+  chaine[2] = 'C';
+  chaine[3] = '\0';
 
-  //test du la fonction clear
+   String test(chaine); //Test du constructeur depuis un c-string
+   std::cout<<test.length()<<std::endl;
+   std::cout<<test.capacity()<<std::endl;
+   test.reserve(30); //Test de la methode reserve
+   std::cout<<test.capacity()<<std::endl;
+
+	
+
+ //test du la fonction clear
   str2.clear();
   cout<<str2.length()<<endl;
 
   //test de l'operateur +
-  
-  char tab[3];
-  tab[0]='r';
-  tab[1]='i';
-  tab[2]='t';
-  String str3 (tab);
-  String str4=str3+'a'; 
+  String str3= test+'D'
+ 
   cout<<str3.length()<<endl;
-  
 }

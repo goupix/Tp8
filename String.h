@@ -15,8 +15,8 @@ class String {
 		int max_size() const;
 		//Methods
 		void clear();
-		String operator+ (const String& lhs, char rhs);
-
+		void reserve(size_t n); //Methode reserve qui change la capacity
+        String operator+ (const String& lhs, char rhs);
 
 
 	protected :
