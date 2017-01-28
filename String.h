@@ -16,7 +16,7 @@ class String {
 		//Methods
 		void clear();
 		void reserve(size_t n); //Methode reserve qui change la capacity
-        String operator+ (const String& lhs, char rhs);
+        friend String operator+ (const String& lhs, char rhs);
 
 
 	protected :

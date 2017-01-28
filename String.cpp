@@ -1,6 +1,6 @@
 #include"String.h"
 #include<iostream>
-
+#include<stdio.h>
 
 //constructeur par défaut
 String::String (){
@@ -26,7 +26,7 @@ int String::capacity() const{
 
 
 char* String::c_str() const{
-  char* p=chaine;
+  char *p=chaine;
   return p;
 
 }
@@ -44,7 +44,7 @@ int String::max_size() const{
 void String::reserve(size_t n){
 	if (n>length_){
 		if (n>100){
-			printf("La capacite donne est trop grande\n");
+			printf("La capacite donnée est trop grande\n");
 		} else {
 				char* newchaine = new char[n+1];
 				for (int i=0 ; i<=length_ ; i++){
@@ -94,10 +94,10 @@ void String::clear(){
 
 }
 
-String operator+ (const String& lhs,const char rhs){
+String operator+ (const String& lhs, char rhs){
   String add;
-  add.length_=lhs.lenght()+1;
-  add.cap=lhs.capacity()+1;
+  add.length_=lhs.length_+1;
+  add.cap=lhs.cap+1;
   add.chaine=new char[add.cap];
   for( int i=0; i<lhs.length_; i++){
     add.chaine[i]=lhs.chaine[i];
