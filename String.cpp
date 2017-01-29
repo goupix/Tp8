@@ -61,11 +61,13 @@ String::String(const String& str){
 
 //#### destructeur #####
 
-void String::clear(){
-  chaine[0]='\0';
-  length_=0;
 
+String::~String(){
+    delete[] chaine;
+    chaine=NULL;
 }
+
+
 
 
 
@@ -162,7 +164,7 @@ void String::resize(size_t n, char c){
 }
 
 
-// renvoit True ou Fale selon que la String est vide ou non
+// renvoit True ou False selon que la String est vide ou non
 bool String::empty(){
 	if (length_ == 0){
 		return true;
@@ -173,6 +175,12 @@ bool String::empty(){
 }
 
 
+//efface la chaine
+void String::clear(){
+  chaine[0]='\0';
+  length_=0;
+
+}
 
 
 
@@ -186,6 +194,7 @@ String operator+ (const String& lhs, char rhs){
 
   if(lhs.cap+1>lhs.max_size_){
     printf("Erreur, la nouvelle taille donnée est trop grande!!\n");
+    
     return lhs;
   }
   else{
@@ -209,7 +218,8 @@ String operator+ (const String& lhs, const String& rhs){
   add.length_=lhs.length_+rhs.length_;
   add.cap=lhs.cap+rhs.cap;
   if (add.cap > lhs.max_size_){
-		printf("Erreur, la taille de la nouvelle chaine est trop grand");
+		printf("Erreur, la taille de la nouvelle chaine est trop grande\n");
+        return lhs;
 	}
   else {
 		add.chaine=new char[add.cap];

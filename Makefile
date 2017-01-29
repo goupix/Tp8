@@ -1,3 +1,4 @@
+
 all: main
 main: main.o String.o
 	g++ main.o String.o -o main

@@ -8,6 +8,9 @@ class String {
 		String(const String& str); //constructeur par copie
 
 
+        //destructeur
+        ~String();
+
 		//Getters 
 		int length() const;
 		int capacity() const;
