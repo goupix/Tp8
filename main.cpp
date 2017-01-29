@@ -14,7 +14,6 @@ int main(){
   printf("Capacité de la chaine: %d\n", str.capacity());
   printf("Chaine: %s\n", str.c_str());
   
-
   
 	
   char chaine[7]; //Tableau de caracteres pour le test
