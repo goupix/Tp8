@@ -47,8 +47,8 @@ int main(){
   test.resize(3,'T');
   printf("Chaine après resize (plus petit): %s\n", test.c_str());
 
-  //test de l'operateur +
-  printf("########## Test de l'operateur + ##########\n");
+  //test de l'operateur + char
+  printf("########## Test de l'operateur + (char) ##########\n");
   String str3= test+'D';
  
   printf("Taille avant ajout de caractere: %d\n", test.length());
@@ -57,8 +57,8 @@ int main(){
   printf("Taille après ajout de caractere: %d\n", str3.length());
   printf("Chaine après ajout: %s\n", str3.c_str());
   
-   //test de l'operateur + str+str
-  printf("########## Test de l'operateur + 2##########\n");
+   //test de l'operateur + string
+  printf("########## Test de l'operateur + (string) ##########\n");
   String str4= test+test;
  
   printf("Taille avant ajout de caractere: %d\n", test.length());
@@ -67,8 +67,8 @@ int main(){
   printf("Taille après ajout de caractere: %d\n", str4.length());
   printf("Chaine après ajout: %s\n", str4.c_str());
   
-  //test de l'operateur + str
-  printf("########## Test de l'operateur + 3##########\n");
+  //test de l'operateur + char*
+  printf("########## Test de l'operateur + (char*) ##########\n");
   String str5= test+chaine;
  
   printf("Taille avant ajout de caractere: %d\n", test.length());
@@ -89,8 +89,8 @@ int main(){
 		printf("Reussi\n");
 	}
 
-  //Test de l' operateur = avec une string
-  printf("######### Test de l'opérateur = ##########\n");
+  //Test de l' operateur = string
+  printf("######### Test de l'opérateur = (string) ##########\n");
   
   char chaine2[3]; //Tableau de caracteres pour le test
   chaine2[0] = 'E';
@@ -115,11 +115,17 @@ int main(){
   printf("Contenu de la chaine après copie: %s\n", str6.c_str());
 
  
-  // Test de l'operateur = avec caractere
-  printf("########## Test de l'operateur = avec caractere ##########\n");;
+  // Test de l'operateur = caractere
+  printf("########## Test de l'operateur = (char)  ##########\n");
   printf("Chaine avant = : %s\n", str6.c_str());
   str6='T';
   printf("Chaine après= : %s\n", str6.c_str());
+
+  //Test de l'operateur = char*
+  printf("########## Test de l'operateur = (char*) ##########\n");
+  printf("Chaine avant =: %s\n", str6.c_str());
+  str6= chaine2;
+  printf("Chaine après =: %s\n", str6.c_str());
 
   
   // Test de la fonction clear
@@ -131,13 +137,13 @@ int main(){
 
   test.clear();
   printf("Taille de la chaine après clear: %d\n", test.length());
-  printf("Capacité de la chaine avant clear: %d\n", test.capacity());
+  printf("Capacité de la chaine après clear: %d\n", test.capacity());
   printf("Chaine après clear: %s\n", test.c_str());
 
   //Test de la methode reserve
 
   test.reserve(30); 
-  printf("##########Test de la méthode reserve##########\n");
+  printf("########## Test de la méthode reserve ##########\n");
   printf("Valeur de la capacité après reserve:: %d\n", test.capacity());
   
 
